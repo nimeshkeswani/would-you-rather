@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { handleInitialData } from '../actions/shared'
 import { connect } from 'react-redux'
 import LoadingBar from 'react-redux-loading'
+import Question from './Question'
 
 class App extends Component {
 	componentDidMount() {
@@ -15,7 +16,7 @@ class App extends Component {
 					{
 						this.props.loading === true
 						? null
-						: this.props.questions.map((id) => (<p>{id}</p>))
+						: this.props.questions.map((id) => (<Question key={id} id={id} />))
 					}
 				</div>
 			</Fragment>
