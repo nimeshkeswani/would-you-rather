@@ -1,8 +1,10 @@
 import React, { Component, Fragment } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { handleInitialData } from '../actions/shared'
 import { connect } from 'react-redux'
 import LoadingBar from 'react-redux-loading'
-import Question from './Question'
+import Login from './Login'
+import Home from './Home'
 
 class App extends Component {
 	componentDidMount() {
@@ -10,24 +12,28 @@ class App extends Component {
 	}
 	render() {
 		return (
-			<Fragment>
-				<LoadingBar />
-				<div className="App">
-					{
-						this.props.loading === true
-						? null
-						: this.props.questions.map((id) => (<Question key={id} id={id} />))
-					}
-				</div>
-			</Fragment>
+			<Router>
+				<Fragment>
+					<LoadingBar />
+					<div className="App">
+						{
+							this.props.loading === true
+							? null
+							: <div>
+								<Route path='/' exact component={Login} />
+								<Route path='/home' component={Home} />
+							  </div>
+						}
+					</div>
+				</Fragment>
+			</Router>
 		);
 	}
 }
 
-function mapStateToProps ({ authedUser, questions }) {
+function mapStateToProps ({ authedUser }) {
 	return {
 		loading: authedUser === null,
-		questions : Object.keys(questions)
 	}
 }
 
