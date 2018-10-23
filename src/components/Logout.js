@@ -9,6 +9,11 @@ class Logout extends Component {
 		this.props.dispatch(setAuthedUser(null))
 	}
 	render() {
+
+		if (!this.props.authedUser) {
+			return <Redirect to='/' />
+		}
+		
 		return (
 			<div>
 			<button onClick={this.handleClick}>Logout
