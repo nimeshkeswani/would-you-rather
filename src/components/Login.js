@@ -13,8 +13,6 @@ class Login extends Component {
 
 		const user = e.target.value
 
-		console.log(user)
-
 		this.setState(() => ({
 		  user
 		}))
@@ -22,12 +20,10 @@ class Login extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault()
-		console.log(this.state.user)
 		this.props.dispatch(setAuthedUser(this.state.user))
 	}
 
 	render() {
-		console.log(this.props)
 
 		if (this.props.authedUser) {
 			return <Redirect to='/home' />

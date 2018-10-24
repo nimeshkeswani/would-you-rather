@@ -5,7 +5,6 @@ import { setAuthedUser } from '../actions/authedUser'
 
 class Logout extends Component {
 	handleClick = (e) => {
-		console.log(this.props.authedUser)
 		this.props.dispatch(setAuthedUser(null))
 	}
 	render() {
