@@ -5,6 +5,9 @@ import { connect } from 'react-redux'
 import LoadingBar from 'react-redux-loading'
 import Login from './Login'
 import Home from './Home'
+import QuestionDetails from './QuestionDetails'
+import NewQuestion from './NewQuestion'
+import Leaderboard from './Leaderboard'
 
 class App extends Component {
 	componentDidMount() {
@@ -22,6 +25,9 @@ class App extends Component {
 							: <div>
 								<Route path='/' exact component={Login} />
 								<Route path='/home' component={Home} />
+								<Route path='/questions/:id' component={QuestionDetails} />
+								<Route path='/new_question' component={NewQuestion} />
+								<Route path='/leaderboard' component={Leaderboard} />
 							  </div>
 						}
 					</div>
