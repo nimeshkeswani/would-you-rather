@@ -5,7 +5,7 @@ class Question extends Component {
 	render() {
 		return (
 			<div>
-				{this.props.author.name} asks {this.props.id}
+				{this.props.author.name} asks {this.props.id} on {this.props.question.timestamp}
 			</div>
 		)
 	}
