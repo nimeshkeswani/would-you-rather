@@ -7,10 +7,37 @@ import Nav from './Nav'
 
 class Home extends Component {
 
+	state = {
+		showAnsweredQuestions: false
+	}
+
+	handleClickUnansweredQuestions = (e) => {
+		this.setState(() => ({
+			showAnsweredQuestions: false
+		}))
+	}
+
+	handleClickAnsweredQuestions = (e) => {
+		this.setState(() => ({
+			showAnsweredQuestions: true
+		}))
+	}
+
 	render() {
+
+		const { showAnsweredQuestions } = this.state
+
+		let showQuestions
 		
 		if (!this.props.authedUser) {
 			return <Redirect to='/' />
+		}
+
+		if (showAnsweredQuestions === false) {
+			showQuestions = this.props.unansweredQuestions.map((id) => (<Question key={id} id={id} />))
+		}
+		else {
+			showQuestions = this.props.answeredQuestions.map((id) => (<Question key={id} id={id} />))
 		}
 
 		return (
@@ -20,14 +47,9 @@ class Home extends Component {
 					User: {this.props.user.name}
 				</div>
 				<br/>
-				Unanswered Questions
+				<button onClick={this.handleClickUnansweredQuestions}>Unanswered Questions</button><button onClick={this.handleClickAnsweredQuestions}>Answered Questions</button>
 				<div>
-					{this.props.unansweredQuestions.map((id) => (<Question key={id} id={id} />))}
-				</div>
-				<br/>
-				Answered Questions
-				<div>
-					{this.props.answeredQuestions.map((id) => (<Question key={id} id={id} />))}
+				{showQuestions}
 				</div>
 				<br/>
 				<Logout />
