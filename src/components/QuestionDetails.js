@@ -6,24 +6,34 @@ import Nav from './Nav'
 class QuestionDetails extends Component {
 	render() {
 
-		if (!this.props.authedUser) {
+		const { id, authedUser, question, author } = this.props
+
+		if (!authedUser) {
 			return <Redirect to='/' />
 		}
 
 		return (
 			<div>
 				<Nav />
+				<img src={author.avatarURL} height="42" width="42"/>
 				<div>
-					Question Details
+					Would You Rather - {question.optionOne.text} or {question.optionTwo.text}
 				</div>
 			</div>
 		)
 	}
 }
 
-function mapStateToProps({ authedUser }) {
+function mapStateToProps({ authedUser, questions, users }, props) {
+	const { id } = props.match.params
+	const question = questions[id]
+	const author = question ? users[question.author] : null
+
 	return {
-		authedUser
+		id,
+		authedUser,
+		question,
+		author,
 	}
 }
 
