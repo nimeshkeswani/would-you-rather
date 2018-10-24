@@ -2,14 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
 import Logout from './Logout'
-import { handleInitialData } from '../actions/shared'
 import { Redirect } from 'react-router-dom'
 import Nav from './Nav'
 
 class Home extends Component {
-	componentDidMount() {
-		this.props.dispatch(handleInitialData())
-	}
+
 	render() {
 		
 		if (!this.props.authedUser) {
@@ -23,13 +20,13 @@ class Home extends Component {
 					User: {this.props.user.name}
 				</div>
 				<br/>
+				Unanswered Questions
 				<div>
-					Unanswered Questions
 					{this.props.unansweredQuestions.map((id) => (<Question key={id} id={id} />))}
 				</div>
 				<br/>
+				Answered Questions
 				<div>
-					Answered Questions
 					{this.props.answeredQuestions.map((id) => (<Question key={id} id={id} />))}
 				</div>
 				<br/>
