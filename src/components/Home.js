@@ -4,6 +4,7 @@ import Question from './Question'
 import Logout from './Logout'
 import { handleInitialData } from '../actions/shared'
 import { Redirect } from 'react-router-dom'
+import Nav from './Nav'
 
 class Home extends Component {
 	componentDidMount() {
@@ -17,6 +18,7 @@ class Home extends Component {
 
 		return (
 			<div>
+				<Nav />
 				<div>
 					User: {this.props.authedUser}
 				</div>
