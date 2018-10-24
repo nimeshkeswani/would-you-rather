@@ -20,21 +20,37 @@ class Home extends Component {
 			<div>
 				<Nav />
 				<div>
-					User: {this.props.authedUser}
+					User: {this.props.user.name}
 				</div>
+				<br/>
 				<div>
-					{this.props.questions.map((id) => (<Question key={id} id={id} />))}
+					Unanswered Questions
+					{this.props.unansweredQuestions.map((id) => (<Question key={id} id={id} />))}
 				</div>
+				<br/>
+				<div>
+					Answered Questions
+					{this.props.answeredQuestions.map((id) => (<Question key={id} id={id} />))}
+				</div>
+				<br/>
 				<Logout />
 			</div>
 		)
 	}
 }
 
-function mapStateToProps({ authedUser, questions }) {
+function mapStateToProps({ authedUser, users, questions }) {
+	
+	const userProp = users[authedUser]
+	const questionsProp = Object.keys(questions)
+	const answeredQuestionsProp = userProp ? Object.keys(userProp.answers) : null
+	const unansweredQuestionsProp = userProp ? questionsProp.filter((question) => (!answeredQuestionsProp.includes(question))) : null
+
 	return {
 		authedUser,
-		questions : Object.keys(questions)
+		user: userProp,
+		answeredQuestions: answeredQuestionsProp,
+		unansweredQuestions: unansweredQuestionsProp,
 	}
 }
 
