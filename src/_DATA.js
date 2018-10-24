@@ -2,7 +2,7 @@ let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: 'http://joelduggan.com/portfolio/cartoon-avatars/#foobox-1/11/star-scav-2011-12-lauram-300x-twitter.png',
+    avatarURL: 'https://image.flaticon.com/icons/svg/702/702015.svg',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionOne',
@@ -14,7 +14,7 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: 'http://joelduggan.com/portfolio/cartoon-avatars/#foobox-1/17/star-scav-2012-02-gregc-300x-twitter.png',
+    avatarURL: 'https://image.flaticon.com/icons/svg/702/702023.svg',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +24,7 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL: 'http://joelduggan.com/portfolio/cartoon-avatars/#foobox-1/25/star-scav-2011-12-chadm-300x-twitter.png',
+    avatarURL: 'https://image.flaticon.com/icons/svg/702/702004.svg',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
