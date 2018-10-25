@@ -1,6 +1,7 @@
-import { GET_QUESTIONS, ASK_QUESTION } from '../actions/questions'
+import { GET_QUESTIONS, ASK_QUESTION, ANSWER_QUESTION, UNANSWER_QUESTION } from '../actions/questions'
 
 export default function questions(state = {}, action) {
+	const { authedUser, qid, answer } = action
 	switch(action.type) {
 		case GET_QUESTIONS :
 			return {
@@ -12,6 +13,28 @@ export default function questions(state = {}, action) {
 			return {
 				...state,
 				[action.question.id]: action.question,
+			}
+		case ANSWER_QUESTION :
+			return {
+				...state,
+				[qid]: {
+					...state[qid],
+					[answer]: {
+						...state[qid][answer],
+						votes: state[qid][answer].votes.concat([authedUser])
+					}
+				}
+			}
+		case UNANSWER_QUESTION :
+			return {
+				...state,
+				[qid]: {
+					...state[qid],
+					[answer]: {
+						...state[qid][answer],
+						votes: state[qid][answer].votes.filter((user) => (user !== authedUser))
+					}
+				}
 			}
 		default :
 			return state
