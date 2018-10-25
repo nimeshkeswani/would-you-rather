@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
-import Logout from './Logout'
 import { Redirect } from 'react-router-dom'
 import Nav from './Nav'
 
@@ -52,7 +51,6 @@ class Home extends Component {
 				{showQuestions}
 				</div>
 				<br/>
-				<Logout />
 			</div>
 		)
 	}

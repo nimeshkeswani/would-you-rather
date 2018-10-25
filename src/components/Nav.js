@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Logout from './Logout'
 
 export default function Nav () {
   return (
@@ -19,6 +20,9 @@ export default function Nav () {
           <NavLink to='/new_question' exact activeClassName='active'>
             New Question
           </NavLink>
+        </li>
+        <li>
+          <Logout />
         </li>
       </ul>
     </nav>
