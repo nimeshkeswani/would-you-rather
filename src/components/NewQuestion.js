@@ -9,6 +9,7 @@ class NewQuestion extends Component {
 	state = {
 		optionOne: '',
 		optionTwo: '',
+		redirect: false,
 	}
 
 	handleChangeOptionOne = (e) => {
@@ -40,12 +41,17 @@ class NewQuestion extends Component {
 	    this.setState(() => ({
 	    	optionOne: '',
 	    	optionTwo: '',
+	    	redirect: true
 	    }))
 	}
 
 	render() {
 
 		if (!this.props.authedUser) {
+			return <Redirect to='/' />
+		}
+
+		if (this.state.redirect) {
 			return <Redirect to='/' />
 		}
 
@@ -63,7 +69,8 @@ class NewQuestion extends Component {
 					OR
 					<input type='text' placeholder="optioneTwo" value={this.state.optionTwo} onChange={this.handleChangeOptionTwo}/>
 					<button
-		            	type='submit'>
+		            	type='submit'
+		            	disabled={this.state.optionOne === '' || this.state.optionTwo === ''}>
 		            		Submit
 		            </button>
 				</form>
