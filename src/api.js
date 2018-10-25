@@ -1,6 +1,8 @@
 import {
   _getUsers,
   _getQuestions,
+  _saveQuestion,
+  _saveQuestionAnswer,
 } from './_DATA.js'
 
 export function getUsers () {
@@ -27,4 +29,13 @@ export function getInitialData () {
     users,
     questions,
   }))
+}
+
+export function askQuestion (info) {
+  return _saveQuestion(info)
+}
+
+
+export function answerQuestion (info) {
+  return _saveQuestionAnswer(info)
 }
