@@ -34,7 +34,10 @@ class QuestionDetails extends Component {
 					<Nav />
 					<img src={author.avatarURL} alt="" height="42" width="42"/>{author.name} asked:
 					<div>
-						Would You Rather - {question.optionOne.text} or {question.optionTwo.text}
+						Would you rather {question.optionOne.text}?
+					</div>
+					<div>
+						Would you rather {question.optionTwo.text}?
 					</div>
 				</div>
 			)
