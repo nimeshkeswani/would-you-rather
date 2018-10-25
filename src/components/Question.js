@@ -7,8 +7,12 @@ class Question extends Component {
 		return (
 			<Link to={`/questions/${this.props.id}`}>
 			<div>
-				{this.props.author.name} asks {this.props.id} on {this.props.question.timestamp}
+				<img src={this.props.author.avatarURL} alt="" height="42" width="42"/> - {this.props.author.name} asks:
 			</div>
+			<div>
+				Would You Rather {this.props.question.optionOne.text} or {this.props.question.optionTwo.text} ?
+			</div>
+			<br/>
 			</Link>
 		)
 	}
