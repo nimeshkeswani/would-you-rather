@@ -13,6 +13,9 @@ class AnsweredQuestion extends Component {
 			return <Redirect to='/' />
 		}
 
+		const optionOneColor = authedUserVote === 'optionOne' ? 'darkseagreen' : 'lightgray'
+		const optionTwoColor = authedUserVote === 'optionTwo' ? 'darkseagreen' : 'lightgray'
+
 		return (
 			<div>
 				<Nav />
@@ -20,15 +23,22 @@ class AnsweredQuestion extends Component {
 				<p>
 					<img src={author.avatarURL} alt="" height="42" width="42"/>
 					<br/>
-					{author.name} asked:
+					Asked by {author.name}
 				</p>
 				<p>
-					Would you rather {question.optionOne.text}? - {optionOneVotes} out of {totalVotes} votes ({optionOnePercVotes}%)
-					 {authedUserVote === 'optionOne' ? ' - Your Vote' : ''}
+				Results:
 				</p>
-				<p>
-					Would you rather {question.optionTwo.text}? - {optionTwoVotes} out of {totalVotes} votes ({optionTwoPercVotes}%)
-					 {authedUserVote === 'optionTwo' ? ' - Your Vote' : ''}
+				<p style={{ 'border-width': '1px', 'border-color': 'black', 'border-style': 'solid', 'background-color': optionOneColor }}>
+					Would you rather {question.optionOne.text}?
+					<br/>({optionOnePercVotes}%)
+					<br/>{optionOneVotes} out of {totalVotes} votes
+					<br/>{authedUserVote === 'optionOne' ? 'Your Vote' : ''}
+				</p>
+				<p style={{ 'border-width': '1px', 'border-color': 'black', 'border-style': 'solid', 'background-color': optionTwoColor }}>
+					Would you rather {question.optionTwo.text}?
+					<br/>({optionTwoPercVotes}%)
+					<br/>{optionTwoVotes} out of {totalVotes} votes
+					<br/>{authedUserVote === 'optionTwo' ? 'Your Vote' : ''}
 				</p>
 				</p>
 			</div>
