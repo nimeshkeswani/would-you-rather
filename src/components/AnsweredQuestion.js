@@ -32,13 +32,13 @@ class AnsweredQuestion extends Component {
 					Would you rather {question.optionOne.text}?
 					<br/>({optionOnePercVotes}%)
 					<br/>{optionOneVotes} out of {totalVotes} votes
-					<br/>{authedUserVote === 'optionOne' ? 'Your Vote' : ''}
+					<br/><b>{authedUserVote === 'optionOne' ? 'Your Vote' : ''}</b>
 				</p>
 				<p style={{ 'border-width': '1px', 'border-color': 'black', 'border-style': 'solid', 'background-color': optionTwoColor }}>
 					Would you rather {question.optionTwo.text}?
 					<br/>({optionTwoPercVotes}%)
 					<br/>{optionTwoVotes} out of {totalVotes} votes
-					<br/>{authedUserVote === 'optionTwo' ? 'Your Vote' : ''}
+					<br/><b>{authedUserVote === 'optionTwo' ? 'Your Vote' : ''}</b>
 				</p>
 				</p>
 			</div>

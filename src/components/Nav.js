@@ -7,6 +7,7 @@ class Nav extends Component {
   render() {
     return (
     <nav>
+      <p>Hello, {this.props.user.name} <img src={this.props.user.avatarURL} alt="" height="21" width="21"/></p>
       <table>
       <tr>
         <td>
@@ -23,9 +24,6 @@ class Nav extends Component {
           <NavLink to='/add' exact activeClassName='active'>
             New Question
           </NavLink>
-        </td>
-        <td>
-        Hello, {this.props.user.name} <img src={this.props.user.avatarURL} alt="" height="21" width="21"/>
         </td>
         <td>
           <Logout />
