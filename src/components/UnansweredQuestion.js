@@ -42,7 +42,7 @@ class UnansweredQuestion extends Component {
 		return (
 			<div>
 				<Nav />
-				<p style={{ 'border-width': '1px', 'border-color': 'black', 'border-style': 'solid' }}>
+				<div style={{ 'borderWidth': '1px', 'borderColor': 'black', 'borderStyle': 'solid' }}>
 				<p>
 					<img src={author.avatarURL} alt="" height="42" width="42"/>
 					<br/>
@@ -70,7 +70,7 @@ class UnansweredQuestion extends Component {
 		            </button>
 		            </p>
 				</form>
-				</p>
+				</div>
 			</div>
 		)
 	}

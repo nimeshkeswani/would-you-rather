@@ -19,7 +19,7 @@ class Leaderboard extends Component {
 				<Nav />
 				<div>
 					{users.map((user, index) => (
-						<p key={user.id} style={{ 'border-width': '1px', 'border-color': 'black', 'border-style': 'solid' }}>
+						<div key={user.id} style={{ 'borderWidth': '1px', 'borderColor': 'black', 'borderStyle': 'solid' }}>
 						<p>
 							<img src={user.avatarURL} alt="" height="42" width="42"/>
 							<br/>{user.name}
@@ -32,7 +32,7 @@ class Leaderboard extends Component {
 							Rank: {index+1}
 							<br/>Score: {user.score}
 						</p>
-						</p>
+						</div>
 					))}
 				</div>
 			</div>

@@ -19,7 +19,7 @@ class AnsweredQuestion extends Component {
 		return (
 			<div>
 				<Nav />
-				<p style={{ 'border-width': '1px', 'border-color': 'black', 'border-style': 'solid' }}>
+				<div style={{ 'borderWidth': '1px', 'borderColor': 'black', 'borderStyle': 'solid' }}>
 				<p>
 					<img src={author.avatarURL} alt="" height="42" width="42"/>
 					<br/>
@@ -28,19 +28,19 @@ class AnsweredQuestion extends Component {
 				<p>
 				Results:
 				</p>
-				<p style={{ 'border-width': '1px', 'border-color': 'black', 'border-style': 'solid', 'background-color': optionOneColor }}>
+				<p style={{ 'borderWidth': '1px', 'borderColor': 'black', 'borderStyle': 'solid', 'backgroundColor': optionOneColor }}>
 					Would you rather {question.optionOne.text}?
 					<br/>({optionOnePercVotes}%)
 					<br/>{optionOneVotes} out of {totalVotes} votes
 					<br/><b>{authedUserVote === 'optionOne' ? 'Your Vote' : ''}</b>
 				</p>
-				<p style={{ 'border-width': '1px', 'border-color': 'black', 'border-style': 'solid', 'background-color': optionTwoColor }}>
+				<p style={{ 'borderWidth': '1px', 'borderColor': 'black', 'borderStyle': 'solid', 'backgroundColor': optionTwoColor }}>
 					Would you rather {question.optionTwo.text}?
 					<br/>({optionTwoPercVotes}%)
 					<br/>{optionTwoVotes} out of {totalVotes} votes
 					<br/><b>{authedUserVote === 'optionTwo' ? 'Your Vote' : ''}</b>
 				</p>
-				</p>
+				</div>
 			</div>
 		)
 	}

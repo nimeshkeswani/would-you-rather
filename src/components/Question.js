@@ -5,7 +5,7 @@ import { Link, withRouter } from 'react-router-dom'
 class Question extends Component {
 	render() {
 		return (
-			<p style={{ 'border-width': '1px', 'border-color': 'black', 'border-style': 'solid' }}>
+			<div style={{ 'borderWidth': '1px', 'borderColor': 'black', 'borderStyle': 'solid' }}>
 			<p>
 				<img src={this.props.author.avatarURL} alt="" height="42" width="42"/>
 				<br/>
@@ -19,7 +19,7 @@ class Question extends Component {
 				<button>View Poll</button>
 					</Link>
 			</p>	
-			</p>
+			</div>
 		)
 	}
 }

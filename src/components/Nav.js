@@ -9,6 +9,7 @@ class Nav extends Component {
     <nav>
       <p>Hello, {this.props.user.name} <img src={this.props.user.avatarURL} alt="" height="21" width="21"/></p>
       <table>
+      <tbody>
       <tr>
         <td>
           <NavLink to='/' exact activeClassName='active'>
@@ -29,6 +30,7 @@ class Nav extends Component {
           <Logout />
         </td>
       </tr>
+      </tbody>
       </table>
     </nav>
     )

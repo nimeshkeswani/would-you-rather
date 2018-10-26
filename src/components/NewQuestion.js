@@ -56,7 +56,7 @@ class NewQuestion extends Component {
 		return (
 			<div>
 				<Nav />
-				<div style={{ 'border-width': '1px', 'border-color': 'black', 'border-style': 'solid' }}>
+				<div style={{ 'borderWidth': '1px', 'borderColor': 'black', 'borderStyle': 'solid' }}>
 				<p>
 					Create New Question
 				</p>
