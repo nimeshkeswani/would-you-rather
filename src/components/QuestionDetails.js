@@ -1,16 +1,23 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
-import Nav from './Nav'
 import UnansweredQuestion from './UnansweredQuestion'
 import AnsweredQuestion from './AnsweredQuestion'
+import { setRedirectURL } from '../actions/redirectURL'
 
 class QuestionDetails extends Component {
+
+	redirectURL = (url) => {
+		this.props.dispatch(setRedirectURL(url))
+	}
+
 	render() {
 
 		const { authedUser, question, isAnswered } = this.props
+		const { url } = this.props.match
 
 		if (!authedUser) {
+			this.redirectURL(url)
 			return <Redirect to='/' />
 		}
 
@@ -30,7 +37,6 @@ class QuestionDetails extends Component {
 
 function mapStateToProps({ authedUser, questions, users }, props) {
 	const { id } = props.match.params
-	const authedUserInfo = authedUser ? users[authedUser] : null
 	const question = questions[id]
 	const isAnswered = authedUser && question ? users[authedUser].answers[question.id] : null
 

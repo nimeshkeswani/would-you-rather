@@ -26,7 +26,12 @@ class Login extends Component {
 	render() {
 
 		if (this.props.authedUser) {
-			return <Redirect to='/home' />
+			if (this.props.redirectURL) {
+				return <Redirect to={this.props.redirectURL} />
+			}
+			else {
+				return <Redirect to='/home' />
+			}
 		}
 
 		return (
@@ -50,11 +55,12 @@ class Login extends Component {
 	}
 }
 
-function mapStateToProps({ authedUser, users }) {
+function mapStateToProps({ authedUser, users, redirectURL }) {
 	const user_ids = Object.keys(users)
 	return {
 		authedUser,
 		users: user_ids.map((user_id) => (users[user_id])),
+		redirectURL,
 	}
 }
 

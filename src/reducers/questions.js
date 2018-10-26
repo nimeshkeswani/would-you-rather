@@ -9,7 +9,6 @@ export default function questions(state = {}, action) {
 				...action.questions
 			}
 		case ASK_QUESTION :
-			const { question } = action
 			return {
 				...state,
 				[action.question.id]: action.question,

@@ -77,8 +77,7 @@ class UnansweredQuestion extends Component {
 }
 
 function mapStateToProps({ authedUser, questions, users }, props) {
-	const { id } = props
-	const authedUserInfo = authedUser ? users[authedUser] : null
+	const { id } = props	
 	const question = questions[id]
 	const author = question ? users[question.author] : null
 
