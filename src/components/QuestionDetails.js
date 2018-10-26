@@ -3,22 +3,18 @@ import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import UnansweredQuestion from './UnansweredQuestion'
 import AnsweredQuestion from './AnsweredQuestion'
-import { setRedirectURL } from '../actions/redirectURL'
 
 class QuestionDetails extends Component {
-
-	addRedirectURL = (url) => {
-		this.props.dispatch(setRedirectURL(url))
-	}
 
 	render() {
 
 		const { authedUser, question, isAnswered } = this.props
-		const { url } = this.props.match
 
 		if (!authedUser) {
-			this.addRedirectURL(url)
-			return <Redirect to='/' />
+			return <Redirect to={{
+			          pathname: '/',
+			          state: { from: this.props.location }
+			        }} />
 		}
 
 		if (!question) {

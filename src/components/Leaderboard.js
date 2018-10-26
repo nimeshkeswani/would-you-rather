@@ -2,24 +2,18 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Nav from './Nav'
-import { setRedirectURL } from '../actions/redirectURL'
 
 class Leaderboard extends Component {
-
-	addRedirectURL = (url) => {
-		this.props.dispatch(setRedirectURL(url))
-	}
 
 	render() {
 
 		const { authedUser, users } = this.props
-		const { url } = this.props.match
-
-		console.log(this.props)
 
 		if (!authedUser) {
-			this.addRedirectURL(url)
-			return <Redirect to='/' />
+			return <Redirect to={{
+			          pathname: '/',
+			          state: { from: this.props.location }
+			        }} />
 		}
 
 		return (
