@@ -55,8 +55,8 @@ function mapStateToProps({ authedUser, questions, users }, props) {
 	const totalVotes = question ? Object.keys(users).map((user) => (users[user].answers[question.id] ? 1 : 0)).reduce((a, b) => a + b, 0) : null
 	const optionOneVotes = question ? Object.keys(users).map((user) => (users[user].answers[question.id] === 'optionOne' ? 1 : 0)).reduce((a, b) => a + b, 0) : null
 	const optionTwoVotes = question ? Object.keys(users).map((user) => (users[user].answers[question.id] === 'optionTwo' ? 1 : 0)).reduce((a, b) => a + b, 0) : null
-	const optionOnePercVotes = optionOneVotes / totalVotes * 100
-	const optionTwoPercVotes = optionTwoVotes / totalVotes * 100
+	const optionOnePercVotes = (optionOneVotes / totalVotes * 100).toFixed(2)
+	const optionTwoPercVotes = (optionTwoVotes / totalVotes * 100).toFixed(2)
 	const authedUserVote = authedUserInfo ? authedUserInfo.answers[question.id] : null
 
 	return {
