@@ -18,10 +18,21 @@ class Leaderboard extends Component {
 			<div>
 				<Nav />
 				<div>
-					{users.map((user) => (
-						<div key={user.id}>
-						<img src={user.avatarURL} alt="" height="42" width="42"/> - {user.name} - {user.answeredQuestions} - {user.askedQuestions} - {user.score}
-						</div>
+					{users.map((user, index) => (
+						<p key={user.id} style={{ 'border-width': '1px', 'border-color': 'black', 'border-style': 'solid' }}>
+						<p>
+							<img src={user.avatarURL} alt="" height="42" width="42"/>
+							<br/>{user.name}
+						</p>
+						<p>
+							Answered Questions: {user.answeredQuestions}
+							<br/>Asked Questions: {user.askedQuestions}
+						</p>
+						<p>
+							Rank: {index+1}
+							<br/>Score: {user.score}
+						</p>
+						</p>
 					))}
 				</div>
 			</div>
