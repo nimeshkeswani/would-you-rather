@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import UnansweredQuestion from './UnansweredQuestion'
 import AnsweredQuestion from './AnsweredQuestion'
+import Page404 from './Page404'
 
 class QuestionDetails extends Component {
 
@@ -18,7 +19,9 @@ class QuestionDetails extends Component {
 		}
 
 		if (!question) {
-			return <Redirect to='/NoPageFound' />
+			return (
+				<Page404 />
+			)
 		}
 
 		if (isAnswered) {
