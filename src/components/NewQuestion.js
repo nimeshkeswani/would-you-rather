@@ -56,22 +56,34 @@ class NewQuestion extends Component {
 		return (
 			<div>
 				<Nav />
-				<div>
+				<div style={{ 'border-width': '1px', 'border-color': 'black', 'border-style': 'solid' }}>
+				<p>
 					Create New Question
-				</div>
-				<div>
-					Would You Rather
-				</div>
+				</p>
+				<hr/>
+				<p>
+					Complete the question:
+				</p>
+				<p>
+					<b>Would You Rather...</b>
+				</p>
 				<form onSubmit={this.handleSubmit}>
+					<p>
 					<input type='text' placeholder="optioneOne" value={this.state.optionOne} onChange={this.handleChangeOptionOne}/>
+					</p>
 					OR
+					<p>
 					<input type='text' placeholder="optioneTwo" value={this.state.optionTwo} onChange={this.handleChangeOptionTwo}/>
+					</p>
+					<p>
 					<button
 		            	type='submit'
 		            	disabled={this.state.optionOne === '' || this.state.optionTwo === ''}>
 		            		Submit
 		            </button>
+		            </p>
 				</form>
+				</div>
 			</div>
 		)
 	}
