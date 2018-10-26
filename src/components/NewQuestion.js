@@ -3,8 +3,13 @@ import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Nav from './Nav'
 import { handleAskQuestion } from '../actions/questions'
+import { setRedirectURL } from '../actions/redirectURL'
 
 class NewQuestion extends Component {
+
+	addRedirectURL = (url) => {
+		this.props.dispatch(setRedirectURL(url))
+	}
 	
 	state = {
 		optionOne: '',
@@ -45,11 +50,10 @@ class NewQuestion extends Component {
 
 	render() {
 
-		if (!this.props.authedUser) {
-			return <Redirect to='/' />
-		}
+		const { url } = this.props.match
 
-		if (this.state.redirect) {
+		if (!this.props.authedUser) {
+			this.addRedirectURL(url)
 			return <Redirect to='/' />
 		}
 
