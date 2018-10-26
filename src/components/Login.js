@@ -31,14 +31,19 @@ class Login extends Component {
 
 		return (
 			<div>
-				Login
+				<p>Welcome to the Would You Rather App!</p>
+				<p>Please login to continue</p>
+				<img src="https://thefamilydinnerproject.org/wp-content/uploads/2013/05/wouldyourather.png" alt="" height="170" width="250"/>
+				<p>Login</p>
 				<form onSubmit={this.handleSubmit}>
-				<select onChange={this.handleChange}>
-					{this.props.users.map((user) => (
-						<option key={user.id} value={user.id}>{user.name}</option>
-					))}
-				</select>
-				<button type='submit'>Log In</button>
+					<p>
+						<select onChange={this.handleChange}>
+							{this.props.users.map((user) => (
+								<option key={user.id} value={user.id}>{user.name}</option>
+							))}
+						</select>
+					</p>
+					<p><button type='submit'>Log In</button></p>
 				</form>
 			</div>
 		)
