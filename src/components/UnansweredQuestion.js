@@ -42,27 +42,35 @@ class UnansweredQuestion extends Component {
 		return (
 			<div>
 				<Nav />
-				<img src={author.avatarURL} alt="" height="42" width="42"/>{author.name} asked:
+				<p style={{ 'border-width': '1px', 'border-color': 'black', 'border-style': 'solid' }}>
+				<p>
+					<img src={author.avatarURL} alt="" height="42" width="42"/>
+					<br/>
+					{author.name} asks:
+				</p>
 				<form onSubmit={this.handleSubmit}>
-					<div>
+					<p>
 						Would you rather {question.optionOne.text}?
 						<input type="radio"
 							value="optionOne"
 							checked={this.state.selectedOption === 'optionOne'} 
 							onChange={this.handleOptionChange} />
-					</div>
-					<div>
+					</p>
+					<p>
 						Would you rather {question.optionTwo.text}?
 						<input type="radio"
 							value="optionTwo"
 							checked={this.state.selectedOption === 'optionTwo'} 
 							onChange={this.handleOptionChange} />
-					</div>
+					</p>
+					<p>
 					<button
 		            	type='submit'>
 		            		Submit
 		            </button>
+		            </p>
 				</form>
+				</p>
 			</div>
 		)
 	}

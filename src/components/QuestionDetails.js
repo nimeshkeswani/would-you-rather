@@ -17,15 +17,21 @@ class QuestionDetails extends Component {
 			return (
 				<div>
 					<Nav />
-					<img src={author.avatarURL} alt="" height="42" width="42"/>{author.name} asked:
-					<div>
+					<p style={{ 'border-width': '1px', 'border-color': 'black', 'border-style': 'solid' }}>
+					<p>
+						<img src={author.avatarURL} alt="" height="42" width="42"/>
+						<br/>
+						{author.name} asked:
+					</p>
+					<p>
 						Would you rather {question.optionOne.text}? - {optionOneVotes} out of {totalVotes} votes ({optionOnePercVotes}%)
 						 {authedUserVote === 'optionOne' ? ' - Your Vote' : ''}
-					</div>
-					<div>
+					</p>
+					<p>
 						Would you rather {question.optionTwo.text}? - {optionTwoVotes} out of {totalVotes} votes ({optionTwoPercVotes}%)
 						 {authedUserVote === 'optionTwo' ? ' - Your Vote' : ''}
-					</div>
+					</p>
+					</p>
 				</div>
 			)
 		}

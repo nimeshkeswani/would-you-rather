@@ -16,7 +16,7 @@ class Question extends Component {
 			</p>
 			<p>
 				<Link to={`/questions/${this.props.id}`}>
-				View Poll
+				<button>View Poll</button>
 					</Link>
 			</p>	
 			</p>
