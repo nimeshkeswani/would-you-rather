@@ -21,6 +21,10 @@ class QuestionDetails extends Component {
 			return <Redirect to='/' />
 		}
 
+		if (!question) {
+			return <Redirect to='/NoPageFound' />
+		}
+
 		if (isAnswered) {
 			return (
 				<AnsweredQuestion id={question.id}/>
