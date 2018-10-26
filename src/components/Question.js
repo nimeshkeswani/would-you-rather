@@ -5,12 +5,12 @@ import { Link, withRouter } from 'react-router-dom'
 class Question extends Component {
 	render() {
 		return (
-			<div style={{ 'border-width': '1px', 'border-color': 'black', 'border-style': 'solid' }}>
-			<div>
+			<p style={{ 'border-width': '1px', 'border-color': 'black', 'border-style': 'solid' }}>
+			<p>
 				<img src={this.props.author.avatarURL} alt="" height="42" width="42"/>
 				<br/>
 				{this.props.author.name} asks:
-			</div>
+			</p>
 			<p>
 				Would You Rather <b>{this.props.question.optionOne.text}</b> or <b>{this.props.question.optionTwo.text}</b> ?
 			</p>
@@ -18,9 +18,8 @@ class Question extends Component {
 				<Link to={`/questions/${this.props.id}`}>
 				View Poll
 					</Link>
+			</p>	
 			</p>
-			<br/>
-			</div>
 		)
 	}
 }

@@ -5,6 +5,7 @@ import { setAuthedUser } from '../actions/authedUser'
 
 class Logout extends Component {
 	handleClick = (e) => {
+		e.preventDefault()
 		this.props.dispatch(setAuthedUser(null))
 	}
 	render() {
@@ -15,8 +16,8 @@ class Logout extends Component {
 		
 		return (
 			<div>
-			<button onClick={this.handleClick}>Logout
-			</button>
+			<a href="" onClick={this.handleClick}>Logout
+			</a>
 			</div>
 		)
 	}

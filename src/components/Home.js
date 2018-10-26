@@ -42,11 +42,12 @@ class Home extends Component {
 		return (
 			<div>
 				<Nav />
+				<br/>
 				<div>
-					User: {this.props.user.name}
+				<button onClick={this.handleClickUnansweredQuestions}>Unanswered Questions</button>
+				<button onClick={this.handleClickAnsweredQuestions}>Answered Questions</button>
 				</div>
 				<br/>
-				<button onClick={this.handleClickUnansweredQuestions}>Unanswered Questions</button><button onClick={this.handleClickAnsweredQuestions}>Answered Questions</button>
 				<div>
 				{showQuestions}
 				</div>
