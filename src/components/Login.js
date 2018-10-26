@@ -2,11 +2,16 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { setAuthedUser } from '../actions/authedUser'
+import { setRedirectURL } from '../actions/redirectURL'
 
 class Login extends Component {
 
 	state = {
 		user: this.props.users[0].id
+	}
+
+	removeRedirectURL = (url) => {
+		this.props.dispatch(setRedirectURL(url))
 	}
 
 	handleChange = (e) => {
@@ -25,9 +30,12 @@ class Login extends Component {
 
 	render() {
 
+		const { redirectURL } = this.props
+
 		if (this.props.authedUser) {
-			if (this.props.redirectURL) {
-				return <Redirect to={this.props.redirectURL} />
+			if (redirectURL) {
+				this.removeRedirectURL(null)
+				return <Redirect to={redirectURL} />
 			}
 			else {
 				return <Redirect to='/home' />

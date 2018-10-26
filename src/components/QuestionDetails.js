@@ -7,7 +7,7 @@ import { setRedirectURL } from '../actions/redirectURL'
 
 class QuestionDetails extends Component {
 
-	redirectURL = (url) => {
+	addRedirectURL = (url) => {
 		this.props.dispatch(setRedirectURL(url))
 	}
 
@@ -17,7 +17,7 @@ class QuestionDetails extends Component {
 		const { url } = this.props.match
 
 		if (!authedUser) {
-			this.redirectURL(url)
+			this.addRedirectURL(url)
 			return <Redirect to='/' />
 		}
 
