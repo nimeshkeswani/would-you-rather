@@ -33,10 +33,10 @@ class Home extends Component {
 		}
 
 		if (showAnsweredQuestions === false) {
-			showQuestions = this.props.unansweredQuestions.map((id) => (<Question key={id} id={id} />))
+			showQuestions = this.props.unansweredQuestions.length > 0 ? this.props.unansweredQuestions.map((id) => (<Question key={id} id={id} />)) : 'No Unanswered Questions'
 		}
 		else {
-			showQuestions = this.props.answeredQuestions.map((id) => (<Question key={id} id={id} />))
+			showQuestions = this.props.answeredQuestions.length > 0 ? this.props.answeredQuestions.map((id) => (<Question key={id} id={id} />)) : 'No Answered Questions'
 		}
 
 		return (
