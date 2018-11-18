@@ -2,6 +2,8 @@
 
 This is a Would You Rather App built using React.
 
+Check it out at: https://nimeshkeswani.github.io/would-you-rather/
+
 To start using it:
 
 * clone the repository
