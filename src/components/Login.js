@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { setAuthedUser } from '../actions/authedUser'
+import '../styles/Login.css'
 
 class Login extends Component {
 
@@ -37,20 +38,16 @@ class Login extends Component {
 		}
 
 		return (
-			<div>
-				<p>Welcome to the Would You Rather App!</p>
+			<div className='wrapper'>
+				<p className='game-name'>Would<br/>You<br/>Rather</p>
 				<p>Please login to continue</p>
-				<img src="https://thefamilydinnerproject.org/wp-content/uploads/2013/05/wouldyourather.png" alt="" height="170" width="250"/>
-				<p>Login</p>
-				<form onSubmit={this.handleSubmit}>
-					<p>
-						<select onChange={this.handleChange}>
-							{this.props.users.map((user) => (
-								<option key={user.id} value={user.id}>{user.name}</option>
-							))}
-						</select>
-					</p>
-					<p><button type='submit'>Log In</button></p>
+				<form className='login-form' onSubmit={this.handleSubmit}>
+					<select className='drop-down' onChange={this.handleChange}>
+						{this.props.users.map((user) => (
+							<option key={user.id} value={user.id}>{user.name}</option>
+						))}
+					</select>
+					<button className='submit-button' type='submit'>Log In</button>
 				</form>
 			</div>
 		)

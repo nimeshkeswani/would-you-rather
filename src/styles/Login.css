@@ -1,0 +1,51 @@
+.wrapper {
+  background-color: #7ca88c;
+  color: #ffffff;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-name {
+  font-family: cursive;
+  font-size: 7vw;
+  text-align: center;
+  line-height: 1.1em;
+}
+
+p {
+  color: #35323b;
+}
+
+.login-form {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.drop-down {
+  background-color: #eceaa0;
+  color: #35323b;
+  border-color: #859032;
+}
+
+.submit-button {
+  padding: 5px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #eceaa0;
+  color: #35323b;
+  border-color: #bed24c;
+}
+
+.submit-button:hover {
+  background-color: #eceaa0;
+  color: #35323b;
+  border-color: #859032;
+}
