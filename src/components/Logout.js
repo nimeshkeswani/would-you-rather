@@ -15,10 +15,8 @@ class Logout extends Component {
 		}
 		
 		return (
-			<div>
 			<a href="/" onClick={this.handleClick}>Logout
 			</a>
-			</div>
 		)
 	}
 }

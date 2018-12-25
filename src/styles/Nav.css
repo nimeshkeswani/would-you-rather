@@ -1,0 +1,29 @@
+nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 2px solid #35323b;
+}
+
+nav div {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+nav a {
+  padding: 0 10px;
+  text-decoration: none;
+  color: #35323b;
+}
+
+
+nav a:hover {
+  color: #eceaa0;
+}
+
+nav p {
+  flex: 1;
+  text-align: right;
+}
