@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Nav from './Nav'
+import '../styles/Leaderboard.css'
 
 class Leaderboard extends Component {
 
@@ -19,9 +20,9 @@ class Leaderboard extends Component {
 		return (
 			<div>
 				<Nav />
-				<div>
+				<div className='users'>
 					{users.map((user, index) => (
-						<div key={user.id} style={{ 'borderWidth': '1px', 'borderColor': 'black', 'borderStyle': 'solid' }}>
+						<div key={user.id} className='user'>
 						<p>
 							<img src={user.avatarURL} alt="" height="42" width="42"/>
 							<br/>{user.name}
