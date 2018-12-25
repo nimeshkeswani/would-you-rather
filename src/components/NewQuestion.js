@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Nav from './Nav'
 import { handleAskQuestion } from '../actions/questions'
+import '../styles/NewQuestion.css'
 
 class NewQuestion extends Component {
 	
@@ -59,22 +60,16 @@ class NewQuestion extends Component {
 		return (
 			<div>
 				<Nav />
-				<div style={{ 'borderWidth': '1px', 'borderColor': 'black', 'borderStyle': 'solid' }}>
-				<p>
-					Create New Question
-				</p>
-				<hr/>
-				<p>
-					Complete the question:
-				</p>
-				<p>
-					<b>Would You Rather...</b>
-				</p>
+				<div className='main'>
+				<div className='new-question'>
+				<p>Create New Question</p>
+				<p>Complete the question:</p>
+				<p><b>Would You Rather...</b></p>
 				<form onSubmit={this.handleSubmit}>
 					<p>
 					<input type='text' placeholder="optioneOne" value={this.state.optionOne} onChange={this.handleChangeOptionOne}/>
 					</p>
-					OR
+					<p>OR</p>
 					<p>
 					<input type='text' placeholder="optioneTwo" value={this.state.optionTwo} onChange={this.handleChangeOptionTwo}/>
 					</p>
@@ -86,6 +81,7 @@ class NewQuestion extends Component {
 		            </button>
 		            </p>
 				</form>
+				</div>
 				</div>
 			</div>
 		)

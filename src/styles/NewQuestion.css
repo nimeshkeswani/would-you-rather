@@ -1,0 +1,16 @@
+.new-question {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 25em;
+  margin: 10px;
+  padding: 10px;
+}
+
+.new-question p {
+  padding: 5px;
+}
+
+.new-question input {
+  background-color: #eceaa0;
+  padding: 5px;
+}
