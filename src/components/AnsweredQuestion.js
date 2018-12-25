@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Nav from './Nav'
+import '../styles/AnsweredQuestion.css'
 
 class AnsweredQuestion extends Component {
 
@@ -19,7 +20,8 @@ class AnsweredQuestion extends Component {
 		return (
 			<div>
 				<Nav />
-				<div style={{ 'borderWidth': '1px', 'borderColor': 'black', 'borderStyle': 'solid' }}>
+				<div className='main'>
+				<div className='answered-question'>
 				<p>
 					<img src={author.avatarURL} alt="" height="42" width="42"/>
 					<br/>
@@ -28,18 +30,19 @@ class AnsweredQuestion extends Component {
 				<p>
 				Results:
 				</p>
-				<p style={{ 'borderWidth': '1px', 'borderColor': 'black', 'borderStyle': 'solid', 'backgroundColor': optionOneColor }}>
+				<p className='answer'>
 					Would you rather {question.optionOne.text}?
 					<br/>({optionOnePercVotes}%)
 					<br/>{optionOneVotes} out of {totalVotes} votes
 					<br/><b>{authedUserVote === 'optionOne' ? 'Your Vote' : ''}</b>
 				</p>
-				<p style={{ 'borderWidth': '1px', 'borderColor': 'black', 'borderStyle': 'solid', 'backgroundColor': optionTwoColor }}>
+				<p className='answer'>
 					Would you rather {question.optionTwo.text}?
 					<br/>({optionTwoPercVotes}%)
 					<br/>{optionTwoVotes} out of {totalVotes} votes
 					<br/><b>{authedUserVote === 'optionTwo' ? 'Your Vote' : ''}</b>
 				</p>
+				</div>
 				</div>
 			</div>
 		)

@@ -1,0 +1,19 @@
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.answered-question {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 25em;
+  margin: 10px;
+  padding: 10px;
+}
+
+.answer {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+}

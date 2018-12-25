@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
+import '../styles/Question.css'
 
 class Question extends Component {
 	render() {
 		return (
-			<div style={{ 'borderWidth': '1px', 'borderColor': 'black', 'borderStyle': 'solid' }}>
+			<div className='question'>
 			<p>
 				<img src={this.props.author.avatarURL} alt="" height="42" width="42"/>
 				<br/>

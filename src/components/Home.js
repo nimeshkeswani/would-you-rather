@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Question from './Question'
 import { Redirect } from 'react-router-dom'
 import Nav from './Nav'
+import '../styles/Home.css'
 
 class Home extends Component {
 
@@ -42,16 +43,13 @@ class Home extends Component {
 		return (
 			<div>
 				<Nav />
-				<br/>
-				<div>
-				<button onClick={this.handleClickUnansweredQuestions}>Unanswered Questions</button>
-				<button onClick={this.handleClickAnsweredQuestions}>Answered Questions</button>
+				<div className='buttons'>
+				<button className='button' onClick={this.handleClickUnansweredQuestions}>Unanswered Questions</button>
+				<button className='button' onClick={this.handleClickAnsweredQuestions}>Answered Questions</button>
 				</div>
-				<br/>
-				<div>
+				<div className='questions'>
 				{showQuestions}
 				</div>
-				<br/>
 			</div>
 		)
 	}

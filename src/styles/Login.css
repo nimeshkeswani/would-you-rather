@@ -34,17 +34,3 @@ p {
   border-color: #859032;
 }
 
-.submit-button {
-  padding: 5px;
-  margin: 10px;
-  border-radius: 5px;
-  background-color: #eceaa0;
-  color: #35323b;
-  border-color: #bed24c;
-}
-
-.submit-button:hover {
-  background-color: #eceaa0;
-  color: #35323b;
-  border-color: #859032;
-}

@@ -1,0 +1,12 @@
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.questions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}

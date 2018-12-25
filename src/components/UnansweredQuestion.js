@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Nav from './Nav'
 import { handleAddAnswer } from '../actions/questions'
+import '../styles/UnansweredQuestion.css'
 
 class UnansweredQuestion extends Component {
 
@@ -42,7 +43,8 @@ class UnansweredQuestion extends Component {
 		return (
 			<div>
 				<Nav />
-				<div style={{ 'borderWidth': '1px', 'borderColor': 'black', 'borderStyle': 'solid' }}>
+				<div className='main'>
+				<div className='unanswered-question'>
 				<p>
 					<img src={author.avatarURL} alt="" height="42" width="42"/>
 					<br/>
@@ -70,6 +72,7 @@ class UnansweredQuestion extends Component {
 		            </button>
 		            </p>
 				</form>
+				</div>
 				</div>
 			</div>
 		)
